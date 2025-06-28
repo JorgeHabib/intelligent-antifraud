@@ -17,10 +17,12 @@ public class FingerprintRiskService {
     boolean isBlacklisted = cacheService.isFingerprintBlacklisted(fingerprint);
 
     int fingerprintScore = 0;
+
     if (isBlacklisted) fingerprintScore += 40;
+  
     fingerprintScore += Math.min(accountsAssociated * 10, 40);
     fingerprintScore += Math.min(ipsAssociated * 5, 20);
     fingerprintScore += Math.min(recentFrequency * 4, 40);
     return fingerprintScore;
-}
+  }
 }

@@ -10,5 +10,5 @@ public class DecisionService {
     if (score <= 30) return Transaction.Decision.APPROVE;
     else if (score <= 70) return Transaction.Decision.REVIEW;
     else return Transaction.Decision.BLOCK;
-}
+  }
 }
